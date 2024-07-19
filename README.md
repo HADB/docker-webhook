@@ -18,7 +18,7 @@ docker run -d -p 8000:8000 --name docker-webhook \
 
 ### docker compose
 
-compose.yaml file
+compose.yaml file:
 
 ```yaml
 name: docker-webhook
@@ -35,6 +35,8 @@ services:
       - /path/to/config.yaml:/etc/docker-webhook/config.yaml
       - /path/to/compose-files:/data/compose-files
 ```
+
+start command:
 
 ```bash
 docker compose up -d
