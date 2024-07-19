@@ -2,11 +2,13 @@
 
 A lightweight webhook server for redeploying docker containers.
 
-Inspired by [adnanh/webhook](https://github.com/adnanh/webhook) which not support docker officially.
+Inspired by [adnanh/webhook](https://github.com/adnanh/webhook) which does not support docker officially.
+
+# Getting started
 
 ## Installation
 
-### docker command
+### Using docker command
 
 ```bash
 docker run -d -p 8000:8000 --name docker-webhook \
@@ -16,9 +18,7 @@ docker run -d -p 8000:8000 --name docker-webhook \
   hadb/docker-webhook
 ```
 
-### docker compose
-
-compose.yaml file:
+### Using docker compose
 
 ```yaml
 name: docker-webhook
@@ -36,13 +36,9 @@ services:
       - /path/to/compose-files:/data/compose-files
 ```
 
-start command:
-
-```bash
-docker compose up -d
-```
-
 ## Configuration
+
+config.yaml:
 
 ```yaml
 webhooks:
@@ -56,17 +52,19 @@ webhooks:
 
 ## Trigger
 
-### Test webhook locally
+### Trigger webhook locally for testing
 
-```bash
-curl -X 'GET' \
-  'http://127.0.0.1:8000/webhook/{webhook_id}' \
-  -H 'accept: application/json'
+You can use the following url trigger a webhook for test locally:
+
+```http
+http://127.0.0.1:8000/webhook/{webhook_id}
 ```
 
 ### Trigger webhook on Docker Hub
 
-Config new webhook on Docker Hub, set the `Webhook URL` to `https://{your_service_domain}/webhook/{webhook_id}`.
+It's recommended to use a reverse proxy like Nginx to proxy the webhook server.
+
+Config new webhook on Docker Hub, set the `Webhook URL` to `https://{your_public_domain}/webhook/{webhook_id}`.
 
 ## Similar Projects
 
