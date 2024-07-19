@@ -14,14 +14,13 @@ def health_check():
 
 
 @app.get("/webhook/{webhook_id}")
-async def read_item(webhook_id: str, request: Request):
+def webhook(webhook_id: str, request: Request):
     if config["webhooks"]:
         for webhook in config["webhooks"]:
             if webhook["id"] == webhook_id:
                 logger.info(f"`{webhook_id}` webhook triggered from {request.client.host}")
                 logger.info(f"`{webhook_id}` webhook command: {webhook['command']}")
                 result = subprocess.run(webhook["command"], shell=True, capture_output=True, text=True)
-
                 if result.returncode == 0:
                     logger.info(f"`{webhook_id}` webhook executed successfully:\n{result.stdout}")
                 else:
