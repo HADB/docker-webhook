@@ -1,0 +1,9 @@
+name: nginx-demo
+services:
+  docker-webhook:
+    container_name: nginx-demo
+    image: nginx
+    restart: always
+    network_mode: bridge
+    ports:
+      - 8080:80

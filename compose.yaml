@@ -1,0 +1,14 @@
+name: docker-webhook
+services:
+  docker-webhook:
+    container_name: docker-webhook
+    image: docker-webhook
+    restart: always
+    network_mode: bridge
+    ports:
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config.yaml:/etc/docker-webhook/config.yaml
+      - ./compose.yaml:/data/compose-files/docker-webhook.yaml
+      - ./nginx-demo-compose.yaml:/data/compose-files/nginx-demo.yaml

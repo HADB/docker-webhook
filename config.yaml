@@ -1,0 +1,7 @@
+webhooks:
+  - id: say-hello
+    command: echo "Hello, world!"
+  - id: docker-info
+    command: docker info
+  - id: redeploy-nginx-demo
+    command: docker compose -f /data/compose-files/nginx-demo.yaml up -d --pull=always --force-recreate 
