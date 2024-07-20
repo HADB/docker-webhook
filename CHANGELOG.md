@@ -2,6 +2,13 @@
 
 
 
+## v0.3.0 (2024-07-20)
+
+### Feature
+
+* feat: support token for authentication ([`ade0a6b`](https://github.com/HADB/docker-webhook/commit/ade0a6b6cc960853b356bd91b8293db24279c71e))
+
+
 ## v0.2.0 (2024-07-19)
 
 ### Documentation
