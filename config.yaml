@@ -1,6 +1,8 @@
+token: global-token
 webhooks:
   - id: say-hello
     command: echo "Hello, world!"
+    token: say-hello-token
   - id: docker-info
     command: docker info
   - id: redeploy-nginx-demo

@@ -18,8 +18,8 @@ Inspired by [adnanh/webhook](https://github.com/adnanh/webhook) which does not s
 ```bash
 docker run -d -p 8000:8000 --name docker-webhook \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /path/to/config.yaml:/etc/docker-webhook/config.yaml \
-  -v /path/to/compose-files:/data/compose-files \
+  -v /path/to/config.yaml:/app/config.yaml \
+  -v /path/to/compose-files:/app/data/compose-files \
   hadb/docker-webhook
 ```
 
@@ -37,8 +37,8 @@ services:
       - 8000:8000
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - /path/to/config.yaml:/etc/docker-webhook/config.yaml
-      - /path/to/compose-files:/data/compose-files
+      - /path/to/config.yaml:/app/config.yaml
+      - /path/to/compose-files:/app/data/compose-files
 ```
 
 ## Configuration
@@ -46,28 +46,32 @@ services:
 config.yaml:
 
 ```yaml
+token: global-token
 webhooks:
   - id: say-hello
     command: echo "Hello, world!"
+    token: say-hello-token
   - id: docker-info
     command: docker info
   - id: redeploy-nginx-demo
-    command: docker compose -f /data/compose-files/nginx-demo.yaml up -d --pull=always --force-recreate
+    command: docker compose -f /app/data/compose-files/nginx-demo.yaml up -d --pull=always --force-recreate
 ```
+
+The global `token` is used to authenticate all webhooks. You can also set a specific token for each webhook which will override the global token.
 
 ## Testing
 
 You can use the following url to trigger a webhook for test locally:
 
 ```http
-http://127.0.0.1:8000/webhook/{webhook_id}
+http://127.0.0.1:8000/webhook/{webhook_id}?token={webhook_token}
 ```
 
 ## Triggering from Docker Hub
 
 It's recommended to use a reverse proxy like Nginx to expose the webhook service to the public.
 
-Config new webhook on Docker Hub, set the `Webhook URL` to `https://{your_public_domain}/webhook/{webhook_id}`.
+Config new webhook on Docker Hub, set the `Webhook URL` to `https://{your_public_domain}/webhook/{webhook_id}?token={webhook_token}`.
 
 ## Similar Projects
 

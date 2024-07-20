@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException, Request
 from yuanfen import Config, Logger, SuccessResponse
 
 app = FastAPI()
-config = Config("/etc/docker-webhook/config.yaml")
+config = Config("config.yaml")
 logger = Logger()
 
 
@@ -14,10 +14,14 @@ def health_check():
 
 
 @app.get("/webhook/{webhook_id}")
-def webhook(webhook_id: str, request: Request):
+def webhook(request: Request, webhook_id: str, token: str = None):
     if config["webhooks"]:
         for webhook in config["webhooks"]:
             if webhook["id"] == webhook_id:
+                webhook_token = webhook.get("token") or config.get("token")
+                if webhook_token and token != webhook_token:
+                    raise HTTPException(status_code=401, detail="Invalid token")
+
                 logger.info(f"`{webhook_id}` webhook triggered from {request.client.host}")
                 logger.info(f"`{webhook_id}` webhook command: {webhook['command']}")
                 result = subprocess.run(webhook["command"], shell=True, capture_output=True, text=True)
