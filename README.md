@@ -19,6 +19,7 @@ Inspired by [adnanh/webhook](https://github.com/adnanh/webhook) which does not s
 docker run -d -p 8000:8000 --name docker-webhook \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /path/to/config.yaml:/app/config.yaml \
+  -v /path/to/logs:/app/logs \
   -v /path/to/demo_compose_file.yaml:/app/data/demo_compose_file.yaml \
   hadb/docker-webhook
 ```
@@ -38,6 +39,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - /path/to/config.yaml:/app/config.yaml
+      - /path/to/logs:/app/logs
       - /path/to/demo_compose_file.yaml:/app/data/demo_compose_file.yaml
 ```
 
