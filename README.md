@@ -20,7 +20,7 @@ docker run -d -p 8000:8000 --name docker-webhook \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /path/to/config.yaml:/app/config.yaml \
   -v /path/to/logs:/app/logs \
-  -v /path/to/demo_compose_file.yaml:/app/data/demo_compose_file.yaml \
+  -v /path/to/demo_compose_file.yaml:/path/to/demo_compose_file.yaml \
   hadb/docker-webhook
 ```
 
@@ -40,7 +40,7 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - /path/to/config.yaml:/app/config.yaml
       - /path/to/logs:/app/logs
-      - /path/to/demo_compose_file.yaml:/app/data/demo_compose_file.yaml
+      - /path/to/demo_compose_file.yaml:/path/to/demo_compose_file.yaml
 ```
 
 ## Configuration
@@ -56,10 +56,12 @@ webhooks:
   - id: docker-info
     command: docker info
   - id: redeploy-demo-compose
-    command: docker compose -f /app/data/demo_compose_file.yaml up -d --pull=always --force-recreate
+    command: docker compose -f /path/to/demo_compose_file.yaml up -d --pull=always --force-recreate
 ```
 
 The global `token` is used to authenticate all webhooks. You can also set a specific token for each webhook which will override the global token.
+
+Note that if you want to redeploy using `docker compose`, you need to mount the compose file to the same path to avoid the error that says the container name is already in use.
 
 ## Testing
 
