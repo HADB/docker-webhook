@@ -1,13 +1,16 @@
 # CHANGELOG
 
+## v0.3.1 (2024-07-22)
 
+### Documentation
+
+* docs: update README.md and test files ([`73d5d43`](https://github.com/HADB/docker-webhook/commit/73d5d43c1feb92e22cde005d6b61731dbf351df6))
 
 ## v0.3.0 (2024-07-20)
 
 ### Feature
 
 * feat: support token for authentication ([`ade0a6b`](https://github.com/HADB/docker-webhook/commit/ade0a6b6cc960853b356bd91b8293db24279c71e))
-
 
 ## v0.2.0 (2024-07-19)
 
@@ -20,7 +23,6 @@
 ### Feature
 
 * feat: update webhook function ([`e7ee137`](https://github.com/HADB/docker-webhook/commit/e7ee13710071295d5d518745e6ce1ecab3a945cb))
-
 
 ## v0.1.0 (2024-07-19)
 
