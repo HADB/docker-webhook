@@ -20,7 +20,7 @@ prerelease = false
 [tool.semantic_release.changelog]
 template_dir = "templates"
 changelog_file = "CHANGELOG.md"
-exclude_commit_patterns = ["^build: *", "^chore: *", "^ci: *", "^test: *"]
+exclude_commit_patterns = ["^build: *", "^chore: *", "^test: *"]
 
 [tool.semantic_release.changelog.environment]
 block_start_string = "{%"
