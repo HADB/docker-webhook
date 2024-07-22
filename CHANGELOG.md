@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.3 (2024-07-22)
+
+### Documentation
+
+* docs: add logs path to README.md ([`c6fad34`](https://github.com/HADB/docker-webhook/commit/c6fad34c766e18d1740c82ba3fb15037adcc1922))
+
 ## v0.3.2 (2024-07-22)
 
 ### Ci
