@@ -5,5 +5,5 @@ webhooks:
     token: say-hello-token
   - id: docker-info
     command: docker info
-  - id: redeploy-nginx-demo
-    command: docker compose -f /data/compose-files/nginx-demo.yaml up -d --pull=always --force-recreate 
+  - id: redeploy-demo-compose
+    command: docker compose -f /app/data/demo_compose_file.yaml up -d --pull=always --force-recreate

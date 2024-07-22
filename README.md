@@ -19,7 +19,7 @@ Inspired by [adnanh/webhook](https://github.com/adnanh/webhook) which does not s
 docker run -d -p 8000:8000 --name docker-webhook \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /path/to/config.yaml:/app/config.yaml \
-  -v /path/to/compose-files:/app/data/compose-files \
+  -v /path/to/demo_compose_file.yaml:/app/data/demo_compose_file.yaml \
   hadb/docker-webhook
 ```
 
@@ -38,7 +38,7 @@ services:
     volumes:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - /path/to/config.yaml:/app/config.yaml
-      - /path/to/compose-files:/app/data/compose-files
+      - /path/to/demo_compose_file.yaml:/app/data/demo_compose_file.yaml
 ```
 
 ## Configuration
@@ -53,8 +53,8 @@ webhooks:
     token: say-hello-token
   - id: docker-info
     command: docker info
-  - id: redeploy-nginx-demo
-    command: docker compose -f /app/data/compose-files/nginx-demo.yaml up -d --pull=always --force-recreate
+  - id: redeploy-demo-compose
+    command: docker compose -f /app/data/demo_compose_file.yaml up -d --pull=always --force-recreate
 ```
 
 The global `token` is used to authenticate all webhooks. You can also set a specific token for each webhook which will override the global token.
