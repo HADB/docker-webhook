@@ -1,6 +1,18 @@
 # CHANGELOG
 
+## v0.3.2 (2024-07-22)
+
+### Ci
+
+* ci: include ci commits in changelog ([`4217aa1`](https://github.com/HADB/docker-webhook/commit/4217aa1ab4bd362d862f9bf635e8565d836f1900))
+
 ## v0.3.1 (2024-07-22)
+
+### Ci
+
+* ci: update config for python_semantic_release ([`7310848`](https://github.com/HADB/docker-webhook/commit/7310848a9e1ce40bffa8564587a83182de54cf03))
+
+* ci: update templates ([`c51f8aa`](https://github.com/HADB/docker-webhook/commit/c51f8aa7cd52fcd597310be3776e6119b35cf047))
 
 ### Documentation
 
