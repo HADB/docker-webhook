@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.4 (2024-07-22)
+
+### Documentation
+
+* docs: add docker compose redeploying notes ([`3d2de2c`](https://github.com/HADB/docker-webhook/commit/3d2de2c1fb8497b170ba2c5e1a9e23c5dc1a0aae))
+
 ## v0.3.3 (2024-07-22)
 
 ### Documentation
