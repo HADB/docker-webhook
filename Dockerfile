@@ -1,11 +1,15 @@
-FROM python:3-alpine
+FROM python:3.12-alpine
 
 RUN apk --no-cache --update add docker-cli docker-cli-compose
+RUN pip install poetry==1.8.3
+
+ENV POETRY_VIRTUALENVS_IN_PROJECT=1 \
+    POETRY_VIRTUALENVS_CREATE=1
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY pyproject.toml poetry.lock /app
+RUN poetry install
 
 COPY main.py .
 
