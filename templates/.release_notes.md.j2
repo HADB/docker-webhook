@@ -7,9 +7,6 @@
 {%- endfor %}{% endif %}{% endfor %}
 
 {%- if context is defined and context.history.released | length > 0 -%}
-{% from ".macros.j2" import version_compare_url %}
-{% from ".macros.j2" import changelog_file_url %}
-
 {% set releases = context.history.released.items() | list %}
 {% set prev_version = releases[1][0].as_tag() %}
 

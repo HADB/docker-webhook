@@ -9,7 +9,6 @@
     name = "docker-webhook"
     package-mode = false
     readme = "README.md"
-    version = "0.3.5"
 
 [tool.poetry.dependencies]
     fastapi = "^0.115.3"
