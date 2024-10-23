@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.6 (2024-10-23)
+
+### Continuous integration
+
+* ci: update template for release notes ([`671a979`](https://github.com/HADB/docker-webhook/commit/671a979dcd26ebf8958775983e560ac0b90bdfb5))
+
 ## v0.3.5 (2024-10-23)
 
 ### Documentation
