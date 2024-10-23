@@ -18,6 +18,7 @@ Inspired by [adnanh/webhook](https://github.com/adnanh/webhook) which does not s
 ```bash
 docker run -d -p 8000:8000 --name docker-webhook \
   -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /root/.docker/config.json:/root/.docker/config.json \  # add this line if your registry need login
   -v /path/to/config.yaml:/app/config.yaml \
   -v /path/to/logs:/app/logs \
   -v /path/to/demo_compose_file.yaml:/path/to/demo_compose_file.yaml \
@@ -37,7 +38,8 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/root/.docker/config.json # add this line if your registry need login
       - /path/to/config.yaml:/app/config.yaml
       - /path/to/logs:/app/logs
       - /path/to/demo_compose_file.yaml:/path/to/demo_compose_file.yaml
