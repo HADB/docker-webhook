@@ -1,2 +1,0 @@
-fastapi
-yuanfen>=2024.7.20.4
