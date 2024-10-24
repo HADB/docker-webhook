@@ -1,4 +1,4 @@
-## What's Changed
+## What's Changed ({{ release.tagged_date.strftime("%Y-%m-%d") }})
 {% for type_, commits in release["elements"] | dictsort %}
 ### {{ type_ | capitalize }}
 {%- if type_ != "unknown" %}
@@ -10,7 +10,7 @@
 {% set releases = context.history.released.items() | list %}
 {% set prev_version = releases[1][0].as_tag() %}
 
-**Full changes**: {{ prev_version | compare_url(version.as_tag()) }}
+---
 
-**All changelog**: [CHANGELOG.md](https://github.com/{{ context.repo_owner }}/{{ context.repo_name }}/blob/{{ context.branch_name }}/CHANGELOG.md)
+**Detaild Changes**: {{ prev_version | compare_url(version.as_tag()) }}
 {%- endif %}
