@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.9 (2024-10-24)
+
+### Continuous integration
+
+* ci: fix typo ([`d3be41c`](https://github.com/HADB/docker-webhook/commit/d3be41cf96125354c9f732032d4174800c40b649))
+
 ## v0.3.8 (2024-10-24)
 
 ### Continuous integration
