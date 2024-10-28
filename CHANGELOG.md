@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.10 (2024-10-28)
+
+### Bug fixes
+
+* fix: add deps ([`bec741c`](https://github.com/HADB/docker-webhook/commit/bec741c85c52275e36986ab1eacd4a3d780f6799))
+
 ## v0.3.9 (2024-10-24)
 
 ### Continuous integration
