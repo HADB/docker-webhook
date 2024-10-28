@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.3.11 (2024-10-28)
+
+### Bug fixes
+
+* fix: fix docker run cmd ([`dd4b6f5`](https://github.com/HADB/docker-webhook/commit/dd4b6f53e31c1ac65a0d60436a910900dac3d9da))
+
 ## v0.3.10 (2024-10-28)
 
 ### Bug fixes
