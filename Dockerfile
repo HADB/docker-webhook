@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.13-alpine
 
 RUN apk --no-cache --update add docker-cli docker-cli-compose
 RUN pip install poetry==1.8.3
