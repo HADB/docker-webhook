@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.4.0 (2024-12-24)
+
+### Features
+
+* feat: support both `GET` and `POST` methods ([`77c478a`](https://github.com/HADB/docker-webhook/commit/77c478a9d5d3c8411f39c0d96613a4dc6f8affd9))
+
 ## v0.3.11 (2024-10-28)
 
 ### Bug fixes
