@@ -13,7 +13,7 @@ def health_check():
     return SuccessResponse(data="OK")
 
 
-@app.get("/webhook/{webhook_id}")
+@app.api_route("/webhook/{webhook_id}", methods=["GET", "POST"])
 def webhook(request: Request, webhook_id: str, token: str = None):
     if config["webhooks"]:
         for webhook in config["webhooks"]:
