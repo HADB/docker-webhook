@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.5.0 (2024-12-24)
+
+### Features
+
+* feat: add renovate.json ([`2eebede`](https://github.com/HADB/docker-webhook/commit/2eebede3415382eef09b541d9756ce0bab19493e))
+
 ## v0.4.0 (2024-12-24)
 
 ### Features
