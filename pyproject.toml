@@ -11,7 +11,7 @@
     readme = "README.md"
 
 [tool.poetry.dependencies]
-    fastapi = "^0.115.6"
+    fastapi = "^0.115.8"
     python = "^3.13.1"
     uvicorn = "^0.34.0"
     yuanfen = "^2024.9.11.2"
