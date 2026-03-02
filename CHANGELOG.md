@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v1.0.0 (2026-03-02)
+
+### Chores
+
+* chore(deps): update actions/checkout action to v6 ([`cb247f2`](https://github.com/HADB/docker-webhook/commit/cb247f29f050d80c9c31b770e5193cc06f49c383))
+
+* chore(deps): update peter-evans/dockerhub-description action to v5 ([`beb0085`](https://github.com/HADB/docker-webhook/commit/beb0085f09935f20e12874fc8705df7fbe4c814d))
+
+* chore(deps): update all non-major dependencies ([`959afff`](https://github.com/HADB/docker-webhook/commit/959afffec87c00f76b1fb9c6656940ef21fc3b76))
+
+* chore(deps): update all non-major dependencies ([`e70687e`](https://github.com/HADB/docker-webhook/commit/e70687eb08cf8f697262f1ceda273c8de44d0143))
+
+* chore(deps): update docker/build-push-action action to v6 ([`44bbf0c`](https://github.com/HADB/docker-webhook/commit/44bbf0cd602894185259d4aa98dd115011e5d922))
+
 ## v0.5.0 (2024-12-24)
 
 ### Features
